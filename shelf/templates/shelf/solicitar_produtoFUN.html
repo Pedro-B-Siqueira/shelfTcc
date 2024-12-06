@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitar Produto</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/SolicitarProd.css' %}">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+    </div>
+</header>
+
+<main>
+    <a href="{% url 'listar_produtos_func' %}"><img src="{% static 'shelf/images/iconvoltar.png' %}" alt="Voltar"></a>
+
+
+    <div class="produto">
+        <h2>Solicitação de Produto:{{ produto.nome }}</h2>
+        <br>
+        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" style="max-width: 200px;">
+        <p>{{ produto.descrição }}</p>
+        <p><strong>Preço unitário:</strong> R$ {{ produto.preço }}</p>
+        <p><strong>Quantidade disponível:</strong> {{ produto.quantidade }}</p>
+
+    <form method="post">
+    {% csrf_token %}
+    <label for="quantidade">Quantidade a retirar:</label>
+    <input type="number" name="quantidade" id="quantidade" min="1" max="{{ produto.quantidade }}" required>
+
+    <label for="destinatario">Destinatário:</label>
+    <input type="text" name="destinatario" id="destinatario" required>
+
+    <p><strong>Total: R$ <span id="total">{{ produto.preço }}</span></strong></p>
+
+    <button type="submit">Solicitar retirada</button>
+</form>
+
+          <script>
+        // Atualiza o total conforme a quantidade é alterada
+        document.getElementById('quantidade').addEventListener('input', function() {
+            var quantidade = this.value;
+            var precoUnitario = {{ produto.preço }};
+            var total = precoUnitario * quantidade;
+            document.getElementById('total').innerText = total.toFixed(2);
+        });
+    </script>
+
+    </div>
+</main>
+<footer>
+    <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

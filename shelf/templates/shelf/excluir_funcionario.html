@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Excluir Produtos</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'shelf/ExcluirProd.css' %}">
+</head>
+<body>
+<header>
+<div class="logo">
+<a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+</div>
+<div class="esc">
+<h1>SHELF</h1>
+</div>
+
+
+</header>
+
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+<div class="form-content">
+<h2>Confirmar Exclusão do Funcionário</h2>
+<br>
+<p>Tem certeza que deseja excluir o Funcionário:</p>
+<p><strong>{{ funcionario.nome }}</strong></p>
+<br>
+<div class="form-buttons">
+<input type="submit" value="Confirmar">
+<a href="{% url 'listar_funcio' %}" class="back-button">Voltar para a lista</a>
+</div>
+</div>
+</form>
+
+<footer>
+<p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

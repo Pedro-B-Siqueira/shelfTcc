@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Produtos</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/CadProd1.css' %}">
+</head>
+<body>
+     <header>
+        <div class="logo">
+            <a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+        </div>
+         <div class="esc">
+            <h1>SHELF</h1>
+        </div>
+        <button class="logout-button">
+            <a href="{% url 'login' %}"><img src="{% static 'shelf/images/iconsair.png' %}" alt="Logout" class="logout-icon"></a>
+        </button>
+
+    </header>
+
+<div class="voltar">
+     <a href="{% url 'main_page' %}">
+        <img class="voltar-icon" src="{% static 'shelf/images/iconvoltar.png' %}" alt="Voltar">
+    </a>
+</div>
+
+    <div class="header-title">
+        <h2>Cadastre um novo Produto</h2>
+    </div>
+
+
+
+    <div class="container2">
+        <form id="contactForm" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit"> Enviar </button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../_IMAGES/Fundo2.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: hidden; /* Evita que a página tenha uma barra de rolagem */
+}
+
+.error {
+        color: red;
+        margin-bottom: 5px;
+    }
+
+#body1 {
+    font-family: Arial, sans-serif;
+    background: url('../_IMAGES/Fundo1.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que o #body1 ocupe o espaço restante */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Faz com que o container ocupe o espaço restante entre o header e o footer */
+    height: calc(100vh - 120px); /* Ajuste de altura total da página, menos a altura do header e footer */
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 9px 30px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Center form elements */
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.esc {
+    text-align: center; /* Centraliza o texto dentro da div */
+}
+
+h1 {
+    font-weight: bold; /* Define a fonte como negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+    font-size: 3rem; /* Tamanho da fonte, ajuste conforme necessário */
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Increase input field size */
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+/* Adjust button styling */
+button {
+    padding: 10px;
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+/* Add hover effect to button */
+button:hover {
+    background-color: #a00000;
+}
+
+
+.admin-link {
+    display: block;
+    margin-top: 10px;
+    color: #8B0000;
+    text-decoration: none;
+    text-align: center;
+}
+
+.admin-link:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    background: linear-gradient(to right, #939090, #800000); /* Degradê de branco para vermelho */
+    padding: 5px 0; /* Diminui o padding para reduzir o tamanho do header */
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    max-width: 70px; /* Diminui um pouco o tamanho da logo */
+    margin-left: 20px; /* Adiciona um pequeno espaçamento à esquerda da página */
+}
+
+footer {
+    background: linear-gradient(to right, black, #800000);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    width: 100%;
+    flex-shrink: 0; /* Evita que o footer seja comprimido */
+    position: sticky;
+    bottom: 0; /* Faz com que o footer "grude" no fundo da página */
+}
+
+
+
+
+
+
+
+
+

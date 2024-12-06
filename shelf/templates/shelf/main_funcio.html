@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/mainFuncio.css' %}">
+    <script src="{% static 'js/form_validation.js' %}"></script>
+</head>
+<body style="background: url('{% static "shelf/images/Fundo3.png" %}') no-repeat center center fixed; background-size: cover;">
+    <header>
+        <div class="logo">
+            <img src="{% static 'shelf/images/logo.png' %}" alt="Logo">
+        </div>
+        <button class="logout-button">
+            <a href="{% url 'login' %}"><img src="{% static 'shelf/images/iconsair.png' %}" alt="Logout" class="logout-icon"></a>
+        </button>
+    </header>
+
+    <main>
+        <div class="welcome-message">
+            <h1>Bem-Vindo, Funcionário</h1>
+        </div>
+
+        <div class="buttons-container">
+            <button class="btn red" onclick="window.location.href='{% url 'historico_produtos_funcio' %}'">
+                <img src="{% static 'shelf/images/homefunc1.png' %}" alt="Histórico">
+                Acesso ao histórico de entrada e saída de produtos
+            </button>
+
+            <button class="btn gray" onclick="window.location.href='{% url 'listar_produtos_func' %}'">
+                <img src="{% static 'shelf/images/homefunc2.png' %}" alt="Produtos em Estoque">
+                Produtos em estoque
+            </button>
+
+            <button class="btn red" onclick="window.location.href='{% url 'status_solicitacoes' %}'">
+                <img src="{% static 'shelf/images/Solicitar.png' %}" alt="Solicitações">
+                Solicitações
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="{% static 'app/script.js' %}"></script>
+</body>
+</html>

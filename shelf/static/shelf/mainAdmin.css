@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-position: center;
+    color: #333;
+    min-height: 100vh; /* Garante que a altura mínima seja sempre 100% da viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para o header */
+header {
+    width: 100%;
+    background: linear-gradient(to right, #ffffff, #800000);
+    padding: 5px 0; /* Espaçamento interno */
+    display: flex;
+    justify-content: space-between; /* Alinha logo à esquerda e botão de logout à direita */
+    align-items: center;
+}
+
+
+header .logo img {
+    max-width: 70px; /* Diminui um pouco o tamanho da logo */
+    margin-left: 20px; /* Adiciona um pequeno espaçamento à esquerda da página */
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-icon {
+    width: 60px;
+    height: 60px;
+}
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* Expande o container para ocupar o espaço restante entre o header e o footer */
+}
+
+/* Seção de conteúdo */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+/* Itens do menu */
+.flex-item {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    background-color: #F1EFEF;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.flex-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flex-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.flex-item p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para o footer */
+footer {
+    width: 100%;
+    background: linear-gradient(to right, black, #800000);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+.flex-item {
+    position: relative; /* Permite o posicionamento absoluto do menu */
+}
+
+.dropdown-menu {
+    display: none; /* Oculta o menu por padrão */
+    position: absolute; /* Posiciona o menu em relação ao pai */
+    top: 100%; /* Aponta para o item pai */
+    left: 0;
+    background-color: #F1EFEF; /* Fundo do menu */
+    border: 1px solid #ddd; /* Borda do menu */
+    border-radius: 5px; /* Cantos arredondados */
+    z-index: 1000; /* Para garantir que o menu fique sobre outros elementos */
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove o espaçamento interno */
+    flex-direction: column; /* Colocar itens em coluna */
+    font-weight: bold;
+}
+
+
+.dropdown-menu li {
+    padding: 20px 30px; /* Aumenta o espaçamento interno para cada item */
+}
+
+.dropdown-menu li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #000000; /* Cor do texto */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ddd; /* Cor de fundo ao passar o mouse */
+}
+
+.dropdown-trigger {
+    cursor: pointer; /* Muda o cursor ao passar sobre o item */
+}
+
+.sino-container{
+    text-align: center;
+}
+.sino-img {
+    width: 80px; /* Diminui o tamanho do sino */
+    cursor: pointer;
+    text-align: center/* Adiciona o cursor de ponteiro para indicar interatividade */
+}
+
+.sino-img:hover {
+    opacity: 0.7; /* Diminui a opacidade ao passar o mouse sobre o sino */
+}
+
+
+
+

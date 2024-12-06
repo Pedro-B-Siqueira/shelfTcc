@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retirar Produto</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/retirarProduto.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+    </div>
+
+    <div class="esc">
+<h1>SHELF</h1>
+</div>
+</header>
+
+<main>
+ <div class="voltar-link">
+<a href="{% url 'main_page' %}">
+<img src="{% static 'shelf/images/iconvoltar.png' %}" alt="Voltar">
+</a>
+
+</div>
+    <h2>Retirar Produto do Estoque</h2>
+
+    <div class="produto">
+        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" style="max-width: 200px;">
+        <h3>{{ produto.nome }}</h3>
+        <p>{{ produto.descrição }}</p>
+        <p><strong>Preço unitário:</strong> R$ {{ produto.preço }}</p>
+        <p><strong>Quantidade disponível:</strong> {{ produto.quantidade }}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <label for="quantidade">Quantidade a retirar:</label>
+            <input type="number" id="quantidade" name="quantidade" value="1" min="1" max="{{ produto.quantidade }}" required>
+
+            <p><strong>Total: R$ <span id="total">{{ produto.preço }}</span></strong></p>
+
+            <button type="submit">Retirar do Estoque</button>
+        </form>
+    </div>
+
+    <script>
+        // Atualiza o total conforme a quantidade é alterada
+        document.getElementById('quantidade').addEventListener('input', function() {
+            var quantidade = this.value;
+            var precoUnitario = {{ produto.preço }};
+            var total = precoUnitario * quantidade;
+            document.getElementById('total').innerText = total.toFixed(2);
+        });
+    </script>
+
+</main>
+
+<footer>
+    <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

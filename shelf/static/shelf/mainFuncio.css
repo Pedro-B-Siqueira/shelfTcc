@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Ajusta para alinhar o conteúdo ao topo */
+    flex-grow: 1;
+    margin-top: 50px; /* Reduz o espaço entre o header e o título */
+}
+
+.welcome-message h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 20px; /* Aumenta o padding para aumentar o tamanho dos botões */
+    width: 320px; /* Aumenta a largura dos botões */
+    border-radius: 10px;
+    border: none;
+    font-size: 18px; /* Aumenta o tamanho do texto */
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo (texto e imagem) horizontalmente */
+    gap: 10px;
+    text-align: center; /* Garante que o texto dentro do botão esteja centralizado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombreamento */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transição suave */
+}
+
+.btn:hover {
+    transform: translateY(-5px); /* Move o botão levemente para cima ao passar o mouse */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+.btn img {
+    max-width: 40px;
+    height: auto;
+}
+
+.red {
+    background-color: #A32020;
+}
+
+.gray {
+    background-color: #C4C4C4;
+    color: black;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(to right, #ffffff, #800000);
+    padding: 5px 0; /* Espaçamento interno */
+    display: flex;
+    justify-content: space-between; /* Alinha logo à esquerda e botão de logout à direita */
+    align-items: center;
+}
+
+
+header .logo img {
+    max-width: 70px; /* Diminui um pouco o tamanho da logo */
+    margin-left: 20px; /* Adiciona um pequeno espaçamento à esquerda da página */
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-icon {
+    width: 60px;
+    height: 60px;
+}
+footer {
+    width: 100%;
+    background: linear-gradient(to right, black, #800000);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    position: relative;
+}

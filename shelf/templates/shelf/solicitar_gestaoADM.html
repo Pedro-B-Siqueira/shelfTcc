@@ -1,0 +1,73 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/gestao1.css' %}">
+    <title>Solicitação de Retirada</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+<a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+</div>
+
+<button class="logout-button">
+<a href="{% url 'login' %}"><img src="{% static 'shelf/images/iconsair.png' %}" alt="Logout" class="logout-icon"></a>
+</button>
+
+<div class="esc">
+<h1>SHELF</h1>
+</div>
+
+</header>
+<main>
+    <div class="voltar-link">
+        <a href="{% url 'main_page' %}">
+            <img src="{% static 'shelf/images/iconvoltar.png' %}" alt="Voltar">
+        </a>
+        <span>Solicitações de Retirada</span>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Destinatário</th>
+                <th>Data</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for solicitacao in solicitacoes %}
+            <tr>
+                <td>{{ solicitacao.produto.nome }}</td>
+                <td>{{ solicitacao.quantidade }}</td>
+                <td>{{ solicitacao.destinatario }}</td>
+                <td>{{ solicitacao.date_created|date:"d/m/Y H:i" }}</td>
+                <td>
+                    {% if solicitacao.status == "Pendente" %}
+                    <form method="post" action="{% url 'atualizar_solicitacao' solicitacao.id %}">
+                        {% csrf_token %}
+                        <button name="acao" value="Aceitar">Aceitar</button>
+                        <button name="acao" value="Negar">Negar</button>
+                    </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" style="text-align: center; font-style: italic; color: gray;">
+                    Não há solicitações pendentes no momento.
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+<footer>
+    <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

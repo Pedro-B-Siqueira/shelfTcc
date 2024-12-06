@@ -1,0 +1,203 @@
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('images/Fundo3.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin-bottom: -20px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background: linear-gradient(to right, #ffffff, #800000);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo à esquerda */
+header .logo img {
+    max-width: 70px;
+}
+
+/* Imagem no meio */
+header .esc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header .esc img {
+    max-height: 60px; /* Ajuste conforme necessário */
+}
+
+/* Botão de logout à direita */
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-icon {
+    width: 190px;
+    height: 50px;
+}
+
+/* Link de "Voltar" */
+.voltar-link {
+display: flex;
+align-items: center;
+margin-left: 70px;
+margin-top: 170px;
+text-decoration: none;
+color: black;
+font-size:25px;
+font-weight: bold;
+position: absolute;
+top: 0;
+}
+
+.voltar-link img {
+width: 45px;
+height: auto;
+margin-right: 35px;
+}
+
+h2 {
+    color: #800000;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px; /* Suba o título */
+    margin-bottom: 20px; /* Deixe espaço abaixo do título */
+}
+
+
+table {
+    width: 95%;
+    margin: 80px auto; /* Aumente a margem superior para afastar da barra */
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+
+
+}
+
+table th, table td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #800000;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botões "Editar" e "Excluir" */
+.edit-btn, .delete-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.edit-btn {
+    background-color: #4CAF50; /* Verde para Editar */
+}
+
+.edit-btn:hover {
+    background-color: #45a049; /* Efeito hover mais escuro */
+}
+
+.delete-btn {
+    background-color: #f44336; /* Vermelho para Deletar */
+}
+
+.delete-btn:hover {
+    background-color: #e53935; /* Efeito hover mais escuro */
+}
+
+/* Estilo do link dentro do botão para "Editar" e "Excluir" */
+.edit-btn a, .delete-btn a {
+    color: white; /* Garante que o texto fique branco */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold;
+}
+/* Footer */
+footer {
+    width: 100%;
+    background: linear-gradient(to right, black, #800000);
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.search-container {
+    position: relative; /* Define um contexto para o botão se posicionar */
+    width: 80%; /* Largura do container, ajusta conforme necessário */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 20px; /* Ajusta o espaçamento superior */
+}
+
+#search-bar {
+    width: 100%; /* Ocupar todo o espaço disponível */
+    padding: 15px; /* Altura ajustada */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Bordas arredondadas completas */
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn {
+    position: absolute; /* Posicionamento absoluto dentro do container */
+    right: 0; /* Encosta no final do campo de busca */
+    top: 50%; /* Centraliza verticalmente em relação à barra */
+    transform: translateY(-50%); /* Ajuste para alinhamento perfeito */
+    padding: 15px 20px;
+    font-size: 16px;
+    background-color: #b70000;
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0; /* Apenas as bordas direitas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #a00000; /* Cor mais escura no hover */
+}
+
+.search-btn:focus {
+    outline: none;
+}

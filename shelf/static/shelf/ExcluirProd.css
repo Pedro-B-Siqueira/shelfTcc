@@ -1,0 +1,174 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: Arial, sans-serif;
+background: url('images/Fundo4.png') no-repeat center center fixed;
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100vh;
+margin-bottom: -20px;
+}
+
+/* Header */
+header {
+width: 100%;
+background: linear-gradient(to right, #ffffff, #800000);
+padding: 10px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+}
+
+.esc {
+color: black;
+text-align: center;
+font-weight: bold;
+font-size: 25px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header .logo img { max-width: 70px; }
+
+header .esc { position: absolute; left: 50%; transform: translateX(-50%); }
+
+header .esc img { max-height: 60px; }
+
+
+
+/* Posicionamento do botão Voltar */
+.form-buttons {
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+}
+
+
+/* Estilo do título */
+h2 {
+font-size: 30px;
+font-weight: bold;
+margin-bottom: 20px;
+text-align: center;
+margin-top: 1px;
+}
+
+/* Parágrafo de confirmação */
+p {
+font-size: 18px;
+text-align: center;
+margin-bottom: 10px;
+}
+
+/* Nome do funcionário */
+p strong {
+font-size: 20px;
+color: #800000;
+}
+
+/* Estilo do formulário */
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 40px;
+}
+
+form input[type="submit"] {
+background-color: #800000;
+color: #fff;
+font-size: 16px;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+background-color: #a00000;
+}
+
+/* Link de cancelar */
+a {
+font-size: 16px;
+color: #800000;
+text-decoration: none;
+text-align: center;
+margin-top: 10px;
+display: block;
+
+}
+
+
+/* Footer */
+footer {
+width: 100%;
+background: linear-gradient(to right, black, #800000);
+text-align: center;
+padding: 20px;
+color: white;
+}
+
+/* Fundo branco para o formulário */
+.form-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+background-color: white; /* Fundo branco */
+padding: 20px; /* Espaçamento interno */
+border-radius: 10px; /* Bordas arredondadas para melhor aparência */
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+/* Estilo dos botões */
+.form-buttons {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+margin-top: 20px;
+}
+
+/* Estilo do botão de voltar */
+.back-button {
+background-color: #800000;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+background-color: #a00000;
+}
+
+/* Estilo do botão de confirmação */
+form input[type="submit"] {
+background-color: #b70000;
+color: white;
+font-size: 16px;
+padding: 14px 27px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+background-color: #a00000;
+}
+
+/* Footer */
+footer {
+width: 100%;
+background: linear-gradient(to right, black, #800000);
+text-align: center;
+padding: 20px;
+color: white;
+}

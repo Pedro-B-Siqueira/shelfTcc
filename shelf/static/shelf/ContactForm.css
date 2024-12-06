@@ -1,0 +1,50 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+.container2 {
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+}
+form {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+form button {
+    background-color: rgba(119, 0, 0, 0.8);
+    color: white;
+    padding: 15px 45px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+form button:hover {
+    background-color: rgba(119, 0, 0, 0.68);
+}
+p {
+    margin-top: 20px;
+}
+.botao-experimentar {
+    background-color: #770000;
+    color: #fff;
+    padding: 8px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    bottom: 25px;
+}
+.botao-experimentar:hover {
+    background-color: rgba(119, 0, 0, 0.8);
+}

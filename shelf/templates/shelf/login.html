@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Administrador</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/LoginAdm.css' %}">
+</head>
+<body id="body1" style="background: url('{% static "shelf/images/Fundo1.png" %}') no-repeat center center fixed; background-size: cover;">
+    <header>
+        <div class="logo">
+           <img src="{% static 'shelf/images/logo.png' %}" alt="Logo">
+        </div>
+        <div class="esc">
+            <h1>SHELF</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="login-box">
+            <h2>Bem-Vindo, Administrador</h2>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="message">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+
+            <form method="post">
+    {% csrf_token %}
+    <label for="username">Login:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Entrar</button>
+</form>
+
+            <a href="{% url 'login_funcio' %}" class="admin-link">Entrar como Funcionário</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+

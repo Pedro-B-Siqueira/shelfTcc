@@ -1,0 +1,123 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: Arial, sans-serif;
+background: url('images/Fundo4.png') no-repeat center center fixed;
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100vh;
+margin-bottom: -20px;
+}
+
+/* Header */
+header {
+width: 100%;
+background: linear-gradient(to right, #ffffff, #800000);
+padding: 10px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+}
+
+/* Logo à esquerda */
+header .logo img {
+max-width: 70px;
+}
+
+/* Imagem no meio */
+header .esc {
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+}
+
+header .esc img {
+max-height: 60px; /* Ajuste conforme necessário */
+}
+
+
+/* Botão de logout */
+.logout-button {
+background: none;
+border: none;
+cursor: pointer;
+}
+
+.logout-icon { width: 190px; height: 50px; }
+
+/* Link de "Voltar" */
+.voltar-link {
+display: flex;
+align-items: center;
+margin-left: 70px;
+margin-top: 170px;
+text-decoration: none;
+color: black;
+font-size:25px;
+font-weight: bold;
+position: absolute;
+top: 0;
+}
+
+.voltar-link img {
+width: 45px;
+height: auto;
+margin-right: 35px;
+}
+
+/* Título acima da barra de pesquisa */
+.listagem-produtos-title {
+text-align: center;
+color: #800000;
+font-size: 24px;
+}
+
+h2 {
+color: #800000;
+font-size: 24px;
+text-align: center;
+margin-top: 10px;
+margin-bottom: 60px;
+}
+
+table {
+width: 90%;
+margin: 0 auto;
+border-collapse: collapse;
+background-color: #fff;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 220px;
+}
+
+table th, table td {
+padding: 15px;
+text-align: center;
+border: 1px solid #ddd;
+}
+
+table th {
+background-color: #800000;
+color: white;
+font-weight: bold;
+}
+
+table tr:nth-child(even) { background-color: #f9f9f9; }
+
+table tr:hover { background-color: #f1f1f1; }
+
+/* ... (rest of the CSS remains unchanged) ... */
+
+/* Footer */
+footer {
+width: 100%;
+background: linear-gradient(to right, black, #800000);
+text-align: center;
+padding: 20px;
+color: white;
+}

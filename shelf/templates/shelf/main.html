@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Adminstrador</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/mainAdmin.css' %}">
+    <script src="{% static 'js/form_validation.js' %}"></script>
+</head>
+
+<body style="background: url('{% static "shelf/images/Fundo4.png" %}') no-repeat center center fixed; background-size: cover;">
+<header>
+        <div class="logo">
+            <img src="{% static 'shelf/images/logo.png' %}" alt="Logo">
+        </div>
+        <button class="logout-button">
+            <a href="{% url 'login' %}"><img src="{% static 'shelf/images/iconsair.png' %}" alt="Logout" class="logout-icon"></a>
+        </button>
+    </header>
+
+
+
+    <!-- Main container -->
+    <div class="container">
+
+
+        <!-- Content section with menu items -->
+        <div class="content">
+            <div class="flex-item dropdown">
+                <div class="dropdown-trigger" onclick="toggleDropdown(event)">
+                    <img src="{% static 'shelf/images/editarListar.png' %}" alt="Editar/Listar">
+                    <p>Editar/Listar</p>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'listar_funcio' %}">Funcionários</a></li>
+                    <li><a href="{% url 'listar_produtos' %}">Produtos</a></li>
+                </ul>
+            </div>
+
+           <div class="flex-item">
+            <a href="{% url 'cadastro' %}"><img src="{% static 'shelf/images/cadastroProd.png' %}" alt="CadastroProd"></a>
+                <p>Cadastro de Produtos</p>
+            </div>
+
+            <div class="flex-item" onclick="viewHistory()">
+                <a href="{% url 'historico_produtos' %}"><img src="{% static 'shelf/images/historico .png' %}" alt="Histórico"></a>
+                <p>Histórico</p>
+            </div>
+
+            <div class="flex-item" onclick="stockOutput()">
+                <a href="{% url 'saida_estoque' %}"><img src="{% static 'shelf/images/saídaestoque.png' %}" alt="Saída de Estoque"></a>
+                <p>Saída de Estoque</p>
+            </div>
+
+            <div class="flex-item" onclick="viewReport()">
+                <a href="{% url 'relatorio_movimentacoes' %}"><img src="{% static 'shelf/images/relatorio.png' %}" alt="Relatório"></a>
+                <p>Relatório</p>
+            </div>
+        </div>
+
+      <div class="sino-container">
+    <a href="{% url 'gestao_solicitacoes' %}">
+        <img src="{% static 'shelf/images/Sininho.png' %}" alt="Sino" class="sino-img">
+    </a>
+</div>
+
+
+    </div>
+
+    <footer>
+        <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="{% static 'js/MenuAdmin.js' %}"> </script>
+
+</body>
+</html>
+
+

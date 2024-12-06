@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Listar Funcionários</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'shelf/ListarFunc1.css' %}">
+</head>
+
+<body>
+<header>
+<div class="logo">
+<a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+</div>
+<div class="esc">
+<h1>SHELF</h1>
+</div>
+<button class="logout-button">
+<a href="{% url 'cadastrar_funcio' %}"><img src="{% static 'shelf/images/iconfuncio.png' %}" alt="Logout" class="logout-icon"></a>
+</button>
+
+</header>
+
+
+<main>
+<div class="voltar-link">
+<a href="{% url 'main_page' %}">
+<img src="{% static 'shelf/images/iconvoltar.png' %}" alt="Voltar">
+</a>
+<span>Funcionários Cadastrados</span>
+</div>
+
+
+<table>
+<h2>Listar Funcionários</h2>
+<tr>
+<th>Nome</th>
+<th>Telefone</th>
+<th>CPF</th>
+<th>Email</th>
+<th>Ações</th>
+
+</tr>
+{% for funcionario in funcionarios %}
+<tr>
+<td>{{ funcionario.nome }}</td>
+<td>{{ funcionario.telefone }}</td>
+<td>{{ funcionario.cpf}}</td>
+<td>{{ funcionario.email }}</td>
+<td><a href="{% url 'editar_funcionario' funcionario.id %}">Editar</a> |
+<a href="{% url 'excluir_funcionario' funcionario.pk %}">Deletar</a></td>
+</tr>
+
+{% endfor %}
+</table>
+
+</main>
+<footer>
+<p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

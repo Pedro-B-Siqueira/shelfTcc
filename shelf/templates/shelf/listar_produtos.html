@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Produtos em Estoque</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'shelf/Produtos1.css' %}">
+</head>
+<body>
+
+<header>
+<div class="logo">
+<a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+</div>
+<div class="esc">
+<h1>SHELF</h1>
+</div>
+<button class="logout-button">
+<a href="{% url 'cadastro' %}"><img src="{% static 'shelf/images/iconProd.png' %}" alt="Logout" class="logout-icon"></a>
+</button>
+
+</header>
+
+
+<main>
+<div class="voltar-link">
+<a href="{% url 'main_page' %}">
+<img src="{% static 'shelf/images/iconvoltar.png' %}" alt="Voltar">
+</a>
+<span>Produtos em estoque</span>
+</div>
+
+<!-- Título "Listagem de Produtos" acima da barra -->
+<h2>Listagem de Produtos</h2>
+
+
+<div class="search-container">
+<form method="get" action="{% url 'listar_produtos' %}">
+<input type="text" id="search-bar" name="search" placeholder="Buscar produto..." value="{{ request.GET.search }}">
+<button class="search-btn" type="submit">
+<p>🔎 Buscar</p>
+</button>
+</form>
+</div>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Preço</th>
+<th>Quantidade</th>
+<th>Avisos</th>
+<th>Ações</th>
+</tr>
+{% for produto in produtos %}
+<tr>
+<td>{{ produto.id }}</td>
+<td>{{ produto.nome }}</td>
+<td>{{ produto.descrição|truncatewords:50 }}</td>
+<td>{{ produto.preço }}</td>
+<td>{{ produto.quantidade }}</td>
+<td>
+{% if produto.quantidade < 15 %}
+<p style="background-color: rgba(255, 0, 0, 0.3); color: black">Estoque em falta.</p>
+{% elif produto.quantidade > 200 %}
+<p style="background-color: rgba(255, 0, 0, 0.3); color: black">Estoque lotado.</p>
+{% elif produto.quantidade <= 25 or produto.quantidade >= 150 %}
+<p style="background-color: rgba(255, 165, 0, 0.3); color: black">Em Alerta.</p>
+{% elif produto.quantidade >= 25 or produto.quantidade <= 150 %}
+<p style="background-color: rgba(0, 110, 0, 0.5); color: black">Ok</p>
+{% endif %}
+</td>
+
+<td>
+<a href="{% url 'produto_update' produto.pk %}">Editar</a> |
+<a href="{% url 'produto_delete' produto.pk %}">Deletar</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+</main>
+<footer>
+<p>© 2024 Empresa SHELF. Todos os direitos reservados.</p> <!-- Exibe uma mensagem de copyright da empresa. -->
+</footer>
+</body>
+</html>

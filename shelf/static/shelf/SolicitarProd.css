@@ -1,0 +1,151 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to right, #fff, #f2f2f2);
+    background-image: url('images/Fundo4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background: linear-gradient(to right, #ffffff, #800000);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .logo img {
+    max-width: 70px;
+    margin-left: 20px;
+}
+
+/* Link Voltar */
+.voltar-link {
+display: flex;
+align-items: center;
+margin-left: 70px;
+margin-top: 170px;
+text-decoration: none;
+color: black;
+font-size:25px;
+font-weight: bold;
+position: absolute;
+top: 0;
+}
+
+.voltar-link img {
+width: 45px;
+height: auto;
+margin-right: 35px;
+}
+
+
+/* Produto */
+.produto {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.produto img {
+    max-width: 200px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.produto p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.produto p strong {
+    font-weight: bold;
+    color: #800000;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #800000;
+    background-color: rgba(255, 235, 235, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+form button {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+form button:hover {
+    background-color: #a20000;
+    transform: translateY(-2px);
+}
+
+form button:active {
+    transform: translateY(1px);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background: linear-gradient(to right, black, #800000);
+    text-align: center;
+    padding: 20px;
+    color: white;
+}

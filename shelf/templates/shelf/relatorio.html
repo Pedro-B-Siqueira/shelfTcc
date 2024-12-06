@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shelf/Relatorio.css' %}">
+    <title>Relatório de Movimentações</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="{% url 'main_page' %}"><img src="{% static 'shelf/images/logo.png' %}" alt="Logo"></a>
+    </div>
+    <div class="esc">
+        <h1>SHELF</h1>
+    </div>
+    
+</header>
+
+<main>
+    <div class="voltar-link">
+        <a href="{% url 'main_page' %}">
+            <img src="{% static 'shelf/images/iconvoltar.png' %}" alt="Voltar">
+        </a>
+        <span>Relatório de Movimentações de Produtos</span>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>TIPO</th>
+                <th>PRODUTO</th>
+                <th>QUANTIDADE</th>
+                <th>DATA</th>
+                <th>DESTINATÁRIO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movimentacao in movimentacoes %}
+                <tr>
+                    <td>{{ movimentacao.tipo }}</td>
+                    <td>{{ movimentacao.produto.nome }} - {{ movimentacao.produto.descrição }}</td>
+                    <td>{{ movimentacao.quantidade_retirada }}</td>
+                    <td>{{ movimentacao.data_retirada }}</td>
+                    <td>{{ movimentacao.destinatario }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <p>© 2024 Empresa SHELF. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
